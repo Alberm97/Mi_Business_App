@@ -1,6 +1,7 @@
 package com.example.mi_business_app
 
 import android.os.Bundle
+import android.text.style.BackgroundColorSpan
 import android.widget.ImageView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -67,16 +68,18 @@ fun Greeting(modifier: Modifier = Modifier) {
                 contentDescription = null,
                 modifier = Modifier
                     .size(200.dp)
-                    .background(color = Color.DarkGray)
+                    .background(color = Color.Black)
             )
             //Áquí colocamos el texto
             Text(
                 text = "Alberto Montero Vera",
                 modifier = Modifier.padding (top = 1.dp),
+                color = Color.White
             )
             Text(
-                text = "Junior Developer",
+                text = "Software Developer",
                 modifier = Modifier.padding(top = 1.dp),
+                color = Color.Green
             )
                 Row(
                     modifier = Modifier.padding(top = 100.dp),
@@ -89,7 +92,8 @@ fun Greeting(modifier: Modifier = Modifier) {
                     )
                     Text(
                         text = "+34 692354025",
-                        modifier = Modifier.padding(start = 8.dp)
+                        modifier = Modifier.padding(start = 8.dp),
+                        color = Color.White
                     )
                 }
                     Row(
@@ -103,7 +107,8 @@ fun Greeting(modifier: Modifier = Modifier) {
                 )
                 Text(
                     text = "albertomontero@gmail.com",
-                    modifier = Modifier.padding(start = 8.dp)
+                    modifier = Modifier.padding(start = 8.dp),
+                    color = Color.White
                 )
             }
 
@@ -114,11 +119,13 @@ fun Greeting(modifier: Modifier = Modifier) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_baseline_share_24),
                     contentDescription = null,
-                    modifier = Modifier.size(24.dp)
+                    modifier = Modifier.size(24.dp),
+
                 )
                 Text(
                     text = "@AlbertoMonteroVera",
-                    modifier = Modifier.padding(start = 8.dp)
+                    modifier = Modifier.padding(start = 8.dp),
+                    color = Color.White
                 )
             }
         }
