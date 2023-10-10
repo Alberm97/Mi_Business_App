@@ -11,9 +11,11 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -38,7 +40,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Greeting()
                 }
             }
         }
@@ -46,12 +48,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(message: String, from: String) {
+fun Greeting(modifier: Modifier = Modifier) {
 
     Box (
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.LightGray),
+            .background(Color.DarkGray),
         contentAlignment = Alignment.Center
     ){
         Column (
@@ -63,7 +65,9 @@ fun Greeting(message: String, from: String) {
             Image(
                 painter = painterResource(id = R.drawable.android_logo),
                 contentDescription = null,
-                modifier = Modifier.size(200.dp)
+                modifier = Modifier
+                    .size(200.dp)
+                    .background(color = Color.DarkGray)
             )
             //Áquí colocamos el texto
             Text(
@@ -71,8 +75,9 @@ fun Greeting(message: String, from: String) {
                 modifier = Modifier.padding (top = 1.dp),
             )
             Text(
-                text = "Junio Developer",
+                text = "Junior Developer",
                 modifier = Modifier.padding(top = 1.dp),
+            )
                 Row(
                     modifier = Modifier.padding(top = 100.dp),
                     verticalAlignment = Alignment.CenterVertically
@@ -87,9 +92,8 @@ fun Greeting(message: String, from: String) {
                         modifier = Modifier.padding(start = 8.dp)
                     )
                 }
-
-                        Row(
-                        modifier = Modifier.padding(top = 1.dp),
+                    Row(
+                    modifier = Modifier.padding(top = 1.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
@@ -98,7 +102,7 @@ fun Greeting(message: String, from: String) {
                     modifier = Modifier.size(24.dp)
                 )
                 Text(
-                    text = "aaron060812@gmail.com",
+                    text = "albertomontero@gmail.com",
                     modifier = Modifier.padding(start = 8.dp)
                 )
             }
@@ -113,7 +117,7 @@ fun Greeting(message: String, from: String) {
                     modifier = Modifier.size(24.dp)
                 )
                 Text(
-                    text = "@AaronGonzalezAlvarez",
+                    text = "@AlbertoMonteroVera",
                     modifier = Modifier.padding(start = 8.dp)
                 )
             }
@@ -125,7 +129,6 @@ fun Greeting(message: String, from: String) {
 @Composable
 fun Mi_Business_AppPreview() {
     Mi_Business_AppTheme {
-        //GreetingText("Happy Birthday Aarón!", "From Aarón")
-        //GreetingImage("La casa del dragón.","Temporada 2")
+        Greeting()
     }
 }
